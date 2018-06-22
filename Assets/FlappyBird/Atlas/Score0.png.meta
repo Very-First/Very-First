@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: a39abe45d48450c41ac2dd5f71fe9af4
-timeCreated: 1528479145
+guid: 2e3839529dd71594f9851cb9805c0931
+timeCreated: 1529689671
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: "\u5730\u9762_0"
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -37,17 +36,17 @@ TextureImporter:
     mipBias: -1
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 22, y: 19, z: 28, w: 29}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -90,21 +89,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: "\u5730\u9762_0"
-      rect:
-        serializedVersion: 2
-        x: 23
-        y: 19
-        width: 78
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
+    sprites: []
     outline: []
     physicsShape: []
   spritePackingTag: Game

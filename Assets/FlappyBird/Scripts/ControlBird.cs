@@ -1,29 +1,49 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class ControlBird : MonoBehaviour {
+public class ControlBird : MonoBehaviour
+{
     public float force = 1f;
-    Vector2 speed = new Vector3(0, -9.8f, 0);
+    public Rigidbody2D rigid;
+    public UnityAction OnDead;
+    public UnityAction<int> OnScore;
 
     private void Awake()
     {
+        rigid = GetComponent<Rigidbody2D>();
     }
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(Input.GetKeyUp(KeyCode.Space))
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            speed = new Vector3(0, 20f, 0);
+            rigid.AddForce(Vector2.up * force);
         }
+    }
 
-        speed = Vector3.Lerp(speed, new Vector3(0, -9.8f, 0), Time.deltaTime);
+    void OnCollisionEnter2D(Collision2D collisionInfo)
+    {
+        Debug.Log("GameOver!");
+        if (OnDead != null) OnDead();
+    }
 
-        transform.Translate(speed * force);
-	}
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Score"))
+        {
+            RandomScore rs = other.GetComponent<RandomScore>();
+            Debug.LogFormat("Got Score :{0}", rs.Score);
+            if (OnScore != null) OnScore(rs.Score);
+            Destroy(other.gameObject);
+        }
+    }
 }
